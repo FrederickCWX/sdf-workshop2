@@ -26,7 +26,8 @@ public class AppTest
         BankAccount bkAcc = new BankAccount("Fred Bank Account");
         bkAcc.deposit("1000");
         float finalBalance = bkAcc.withdraw("500");
-        assertEquals(500, finalBalance, .1);
+        //delta in assertEquals is the error margin for test case
+        assertEquals(500, finalBalance, 0);
 
     }
 
