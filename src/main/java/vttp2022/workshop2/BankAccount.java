@@ -10,7 +10,8 @@ import java.util.UUID;
  */
 
 public class BankAccount {
-  //source action getters and setters 
+  //source action getters and setters
+  //provide empty string as null safety
   private String name ="";
 
   //random ID genereate from UUID package, change to string, limit the length of string
@@ -118,7 +119,7 @@ public class BankAccount {
       System.err.print(e);
       throw new IllegalArgumentException("Invalid withdrawl amount");
     }
-    return withdrawAmtF.floatValue();
+    return this.balance;
   }
 
   public void deposit(String depositAmt){
