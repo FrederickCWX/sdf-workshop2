@@ -5,7 +5,9 @@ import java.util.List;
 //generate uuid
 import java.util.UUID;
 
-import javax.sound.midi.Soundbank;
+/*
+ * This is a Bank Account class
+ */
 
 public class BankAccount {
   //source action getters and setters 
@@ -28,6 +30,7 @@ public class BankAccount {
   //first constructor name
   public BankAccount(String name){
     this.name = name;
+    this.balance = 0;
   }
 
   //second constructor name and initial balance
@@ -93,7 +96,7 @@ public class BankAccount {
     this.accountClosingDate = accountClosingDate;
   }
 
-  protected float withdraw(String withdrawAmt){
+  public float withdraw(String withdrawAmt){
     Float withdrawAmtF = Float.parseFloat(withdrawAmt);
     try {
       
@@ -103,6 +106,10 @@ public class BankAccount {
 
       if(this.isClosed()){
         throw new IllegalArgumentException("Account is closed lah!");
+      }
+
+      if(withdrawAmtF.floatValue()>this.balance){
+        throw new IllegalArgumentException("Withdrawl amount exceeds account balance!");
       }
 
       this.balance = this.balance - withdrawAmtF.floatValue();
@@ -122,7 +129,7 @@ public class BankAccount {
     return withdrawAmtF.floatValue();
   }
 
-  protected void deposit(String depositAmt){
+  public void deposit(String depositAmt){
     try {
       Float depositAmtF = Float.parseFloat(depositAmt);
       if(depositAmtF.floatValue()<=0){
