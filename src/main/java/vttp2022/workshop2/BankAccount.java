@@ -117,7 +117,7 @@ public class BankAccount {
       StringBuilder txnStrbld = new StringBuilder();
       txnStrbld.append("Withdraw $");
       txnStrbld.append(withdrawAmtF.floatValue());
-      txnStrbld.append("at");
+      txnStrbld.append(" at ");
       txnStrbld.append(LocalDateTime.now());
       System.out.println(txnStrbld.toString());
       transaction.add(txnStrbld.toString());
@@ -145,7 +145,7 @@ public class BankAccount {
       StringBuilder txnStrbld = new StringBuilder();
       txnStrbld.append("Deposit $");
       txnStrbld.append(depositAmtF.floatValue());
-      txnStrbld.append("at");
+      txnStrbld.append(" at ");
       txnStrbld.append(LocalDateTime.now());
       System.out.println(txnStrbld.toString());
       transaction.add(txnStrbld.toString());
